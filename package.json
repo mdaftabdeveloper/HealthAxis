@@ -1,0 +1,19 @@
+{
+  "name": "healthaxis",
+  "version": "1.0.0",
+  "description": "College minor project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdaftabdeveloper/HealthAxis.git"
+  },
+  "author": "Md Aftab Alam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdaftabdeveloper/HealthAxis/issues"
+  },
+  "homepage": "https://github.com/mdaftabdeveloper/HealthAxis#readme"
+}
