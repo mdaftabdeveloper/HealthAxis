@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Login - Health Axis</title>
+    <!-- Static CSS file -->
+    <link rel="stylesheet" href="/css/doctorLogin.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>Hello Doctor, Welcome to Health Axis</header>
+
+    <!-- Main Login Section -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1>👨‍⚕️ Health Axis</h1>
+            <h2>Doctor Login</h2>
+
+            <!-- Error Message Display -->
+            <% if (typeof error !=='undefined' && error) { %>
+                <div style="color: red; margin-bottom: 10px;">
+                    <%= error %>
+                </div>
+                <% } %>
+
+                    <form action="/doctor/login" method="post">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required>
+
+                        <button type="submit">Login</button>
+
+                        <div class="link-group">
+                            <a href="/doctor/registration">Sign Up</a>
+                            <a href="/doctor/forgot-password">Forgot Password?</a>
+                        </div>
+                    </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer> &copy; 2025 Health Axis | All rights reserved </footer>
+</body>
+
+</html>
