@@ -1,6 +1,8 @@
 const Doctor = require('../models/Doctor');
-const { hashPassword } = require('../utils/bcrypt');
+const { hashPassword, comparePassword } = require('../utils/bcrypt');
 const { createAndSendOtp, verifyOtp } = require('../utils/otpService');
+const Otp = require('../models/Otp');
+
 async function registerDoctor(req, res) {
     try {
         console.log(req.body);
@@ -33,7 +35,7 @@ async function verifyDoctorOtp(req, res) {
         if (!isValid) {
             return res.send("Invalid or expired OTP");
         }
-
+        await Otp.updateOne({ email, otp }, { $set: { isUsed: true } });
         await Doctor.updateOne({ email }, { isVerified: true });
         res.redirect("/doctor/login");
     } catch (error) {
@@ -42,4 +44,34 @@ async function verifyDoctorOtp(req, res) {
     }
 }
 
-module.exports = { registerDoctor, verifyDoctorOtp };
+
+async function doctorLogin(req, res) {
+    try {
+        const { email, password } = req.body;
+        req.session.doctorEmail = doctor.email;
+        req.session.doctorName = doctor.name;
+        const doctor = await Doctor.findOne({ email });
+        if (!doctor) {
+            return res.status(400).send("Doctor not found");
+        }
+
+        if (!doctor.isVerified) {
+            await createAndSendOtp(doctor.email, doctor.name);
+
+            return res.redirect('/verify/doctor');
+        }
+
+        const isMatch = await comparePassword(password, doctor.password);
+        if (!isMatch) {
+            return res.status(400).send("Invalid password");
+        }
+
+        res.render('doctorDashboard', { doctorName: req.session.doctorName });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Server Error");
+    }
+}
+
+module.exports = { registerDoctor, verifyDoctorOtp, doctorLogin };

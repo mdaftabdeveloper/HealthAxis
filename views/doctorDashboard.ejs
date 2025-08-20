@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="/css/doctorDashboard.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="welcome">
+            Welcome, Dr. <%= doctorName %>
+        </div>
+        <div class="logout">
+            <form action="/doctor/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Title -->
+    <h2>Doctor Dashboard - Health Axis</h2>
+
+    <!-- Dashboard Cards -->
+    <div class="dashboard">
+        <div class="card">
+            <span class="emoji">👥</span>
+            <a href="/doctor/patients">View Assigned Patients</a>
+            <p>See the list of patients currently under your care.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">🩺</span>
+            <a href="/doctor/diagnosis">Record Diagnosis</a>
+            <p>Enter your professional diagnosis for patient cases.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">💊</span>
+            <a href="/doctor/prescriptions">Write Prescription</a>
+            <p>Generate prescriptions based on diagnosis and patient needs.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📅</span>
+            <a href="/doctor/appointments">View Appointments</a>
+            <p>Check your scheduled appointments with patients.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📝</span>
+            <a href="/doctor/notes">Add Patient Notes</a>
+            <p>Add personal notes or observations for future reference.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📈</span>
+            <a href="/doctor/stats">View Health Stats</a>
+            <p>Analyze patient health stats like vitals and trends.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📂</span>
+            <a href="/doctor/history">View Medical History</a>
+            <p>Access full historical data and past treatments.</p>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📧</span>
+            <a href="/doctor/messages">Communicate with Patients</a>
+            <p>Send messages, updates, or instructions to patients.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Health Axis | All rights reserved
+    </footer>
+</body>
+
+</html>

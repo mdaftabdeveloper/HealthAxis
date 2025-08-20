@@ -1,20 +1,22 @@
 const Otp = require("../models/Otp");
+const generateOtp = require("./generateOtp");
 const { sendMail } = require("./mailer");
 
-function generateOtp() {
-    return Math.floor(100000 + Math.random() * 900000).toString();
-}
+// function generateOtp() {
+//     return Math.floor(100000 + Math.random() * 900000).toString();
+// }
 
 async function createAndSendOtp(email, name) {
-    const otpCode = generateOtp();
+  const otpCode = generateOtp();
 
-    await Otp.create({ email, otp: otpCode });
+  await Otp.create({ email, otp: otpCode });
 
-    const subject = "Health Axis - Email Verification OTP";
-    const message = `
+  const subject = "Health Axis - Email Verification OTP";
+  const message = `
   Hello Dr. ${name},
 
-  Your OTP for verifying your Health Axis account is: ${otpCode}
+  Your OTP for verifying your Health Axis account is:
+  ${otpCode}
 
   This OTP will expire in 10 minutes.
   If you did not register, please ignore this email.
@@ -23,17 +25,17 @@ async function createAndSendOtp(email, name) {
   Health Axis Team
   `;
 
-    await sendMail(email, subject, message);
+  await sendMail(email, subject, message);
 
-    return otpCode;
+  return otpCode;
 }
 
 async function verifyOtp(email, otp) {
-    const otpRecord = await Otp.findOne({ email, otp });
-    if (!otpRecord) return false;
+  const otpRecord = await Otp.findOne({ email, otp });
+  if (!otpRecord) return false;
 
-    // await Otp.deleteMany({ email });
-    // return true;
+  // await Otp.deleteMany({ email });
+  return true;
 }
 
 module.exports = { createAndSendOtp, verifyOtp };

@@ -7,7 +7,9 @@ const DoctorController = require('../controllers/DoctorController');
 router.get('/doctor/login', (req, res) => {
     res.render('doctorLogin');
 });
-
+router.post('/doctor/login', (req, res) => {
+    DoctorController.doctorLogin(req, res);
+});
 router.get('/doctor/registration', (req, res) => {
     res.sendFile(path.join(__dirname, "../views", "doctorRegistration.html"));
 });
