@@ -13,13 +13,13 @@ const rootRoute = require('./routes/rootRoute');
 const doctorRoute = require('./routes/doctor');
 dbConnection();
 app.use(session({
-    secret: process.env.SESSION_SECRET,  // ✅ now loaded from .env
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 10,  // 10 minutes
-        httpOnly: true,          // security: not accessible via JS
-        secure: false            // set to true if using HTTPS
+        maxAge: 1000 * 60 * 10,
+        httpOnly: true,
+        secure: false
     }
 }));
 
