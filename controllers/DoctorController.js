@@ -48,9 +48,10 @@ async function verifyDoctorOtp(req, res) {
 async function doctorLogin(req, res) {
     try {
         const { email, password } = req.body;
-        req.session.doctorEmail = doctor.email;
-        req.session.doctorName = doctor.name;
+        req.session.doctorEmail = email;
         const doctor = await Doctor.findOne({ email });
+        req.session.doctorName = doctor.name;
+
         if (!doctor) {
             return res.status(400).send("Doctor not found");
         }

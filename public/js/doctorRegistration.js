@@ -21,10 +21,10 @@ function checkPasswordMatch() {
         return;
     }
     if (pwd.value === confirmPwd.value) {
-        msg.textContent = "✅ Passwords match";
+        msg.textContent = "Passwords match";
         msg.style.color = "green";
     } else {
-        msg.textContent = "❌ Passwords do not match";
+        msg.textContent = "Passwords do not match";
         msg.style.color = "red";
     }
 }

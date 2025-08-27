@@ -1,4 +1,4 @@
-// routes/doctorRoute.js
+
 const express = require('express');
 const path = require('path');
 const router = express.Router();
@@ -11,7 +11,7 @@ router.post('/doctor/login', (req, res) => {
     DoctorController.doctorLogin(req, res);
 });
 router.get('/doctor/registration', (req, res) => {
-    res.sendFile(path.join(__dirname, "../views", "doctorRegistration.html"));
+    res.render('doctorRegistration');
 });
 
 router.post('/register/doctor', DoctorController.registerDoctor);

@@ -13,7 +13,7 @@ async function createAndSendOtp(email, name) {
 
   const subject = "Health Axis - Email Verification OTP";
   const message = `
-  Hello Dr. ${name},
+  Hello ${name},
 
   Your OTP for verifying your Health Axis account is:
   ${otpCode}

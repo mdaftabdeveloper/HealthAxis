@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", sans-serif;
+	background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+	/* only background changed */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #ad1457;
+	/* dark pinkish text color */
+}
+
+header {
+	background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+	color: #ad1457;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.login-box {
+	background: #ffffffdd;
+	padding: 40px 30px;
+	border-radius: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	width: 100%;
+	max-width: 400px;
+}
+
+.login-box h1 {
+	margin-bottom: 10px;
+	color: #ad1457;
+}
+
+.login-box h2 {
+	margin-bottom: 30px;
+	color: #ad1457;
+}
+
+label {
+	display: block;
+	text-align: left;
+	margin: 10px 0 5px;
+	font-weight: 600;
+	color: #ad1457;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-bottom: 15px;
+	font-size: 1rem;
+	color: #ad1457;
+}
+
+button {
+	background: #a71b4c;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+button:hover {
+	background: #bd2567;
+}
+
+.link-group {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.link-group a {
+	color: #ad1457;
+	text-decoration: none;
+	font-size: 0.95rem;
+}
+
+.link-group a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	background-color: #f8bbd0;
+	color: #ad1457;
+	text-align: center;
+	padding: 12px 0;
+	font-weight: 600;
+}
+
+@media ( max-width : 480px) {
+	.login-box {
+		padding: 25px 20px;
+	}
+	h1, h2 {
+		font-size: 1.4rem;
+	}
+	.link-group {
+		flex-direction: column;
+		gap: 8px;
+		align-items: center;
+	}
+}

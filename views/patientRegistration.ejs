@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>New Patient Registration - Health Axis</title>
+    <link rel="stylesheet" href="/css/patientRegistration.css">
+</head>
+
+<body>
+    <header> 📝 New Patient Registration - Health Axis </header>
+    <form id="patientForm" enctype="multipart/form-data" onsubmit="return validateForm();">
+        <h2>Patient Registration</h2>
+        <div class="form-group">
+            <label for="patientId">Patient ID</label>
+            <input type="text" id="patientId" name="patientId" readonly />
+        </div>
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required />
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required onchange="calculateAge()" />
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" readonly />
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Third Gender</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="text" pattern="\d{10}" maxlength="10" minlength="10" id="mobile" name="mobile" required />
+        </div>
+        <div class="form-group">
+            <label for="aadhar">Aadhar Number</label>
+            <input type="text" pattern="\d{12}" maxlength="12" minlength="12" id="aadhar" name="aadhar" required />
+        </div>
+        <div class="form-group">
+            <label for="referredBy">Referred By</label>
+            <select id="referredBy" name="referredBy" required>
+                <option value="">Select</option>
+                <option>Self</option>
+                <option>Dr. J. Hoda (General Physician, M.D.)</option>
+                <option>Dr. V. Kumar (Orthopaedics Surgeon M.B.B.S. & M.S.)</option>
+            </select>
+        </div>
+        <!-- PASSWORD FIELDS -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required minlength="6" />
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Re-enter Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" />
+            <p id="passwordError"></p>
+        </div>
+        <!-- Camera & Preview -->
+        <div style="text-align: center;">
+            <div id="camera">
+                <label>📷 Live Camera</label><br>
+                <video id="video" autoplay></video>
+                <br>
+                <button type="button" id="captureBtn">Capture</button>
+            </div>
+            <div id="preview">
+                <label>🖼️ Photo Preview</label><br>
+                <img id="capturedImage" src="" alt="Preview" />
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    <footer> &copy; 2025 Health Axis | Patient Registration Portal</footer>
+    <script src="/js/patientRegistration.js"></script>
+</body>
+
+</html>

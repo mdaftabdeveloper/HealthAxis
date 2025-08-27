@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Segoe UI', sans-serif;
+	background: linear-gradient(to right, #e0f7fa, #fce4ec);
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+header {
+	background: linear-gradient(to right, #ad1457, #ec407a);
+	color: white;
+	padding: 20px;
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: bold;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+	background: white;
+	padding: 40px 30px;
+	max-width: 400px;
+	margin: auto;
+	margin-top: 40px;
+	border-radius: 16px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	text-align: center;
+}
+
+.card h2 {
+	color: #ad1457;
+	margin-bottom: 25px;
+}
+
+label {
+	display: block;
+	text-align: left;
+	margin-bottom: 6px;
+	font-weight: bold;
+	color: #333;
+}
+
+input[type="email"], input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+}
+
+input[readonly] {
+	background-color: #f3f3f3;
+}
+
+button {
+	background-color: #a71b4c;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	width: 200px;
+}
+
+button:hover {
+	background-color: #bd2567;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+footer {
+	margin-top: auto;
+	text-align: center;
+	padding: 15px;
+	background: #f8bbd0;
+	color: #880e4f;
+	font-weight: 600;
+}
