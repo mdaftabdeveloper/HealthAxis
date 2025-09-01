@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Receptionist Dashboard - Health Axis</title>
+    <link rel="stylesheet" href="/css/receptionistDashboard.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="welcome">
+            Welcome,
+            <%= session.receptionistName %>
+        </div>
+        <div class="logout">
+            <form action="./html/receptionistLogin.html" method="get">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Title -->
+    <h2>Receptionist Dashboard - Health Axis</h2>
+
+    <!-- Dashboard Cards -->
+    <div class="dashboard">
+        <div class="card">
+            <span class="emoji">🆕</span>
+            <a href="registerPatient.html">Register New Patient</a>
+            <div class="card-description">
+                Add new patient details quickly and securely to the system.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📋</span>
+            <a href="ViewPatientServlet">View Patient Details</a>
+            <div class="card-description">
+                Browse and manage existing patient records anytime.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">📅</span>
+            <a href="bookAppointment.jsp">Book Appointment</a>
+            <div class="card-description">
+                Schedule appointments efficiently for patients.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">🗓️</span>
+            <a href="appointmentList.jsp">View Appointments</a>
+            <div class="card-description">
+                Check all upcoming patient appointments at a glance.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">🏥</span>
+            <a href="checkInPatient.jsp">Patient Check-In</a>
+            <div class="card-description">
+                Manage patient arrivals and streamline the check-in process.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">💵</span>
+            <a href="billing.jsp">Generate Bills</a>
+            <div class="card-description">
+                Create invoices and handle billing for treatments and services.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">🔍</span>
+            <a href="searchPatients.jsp">Search Patient Records</a>
+            <div class="card-description">
+                Quickly find patient info using advanced search filters.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="emoji">🚨</span>
+            <a href="emergencyCases.jsp">Record Emergency Cases</a>
+            <div class="card-description">
+                Log urgent patient cases for immediate attention.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer> &copy; 2025 Health Axis | Receptionist Portal </footer>
+</body>
+
+</html>

@@ -6,6 +6,10 @@ const upload = require('../middlewares/multer');
 router.get('/patient/login', (req, res) => {
     res.render('patientLogin');
 });
+
+router.post('/patient/login', (req, res) => {
+    PatientController.patientLogin(req, res);
+});
 router.get('/patient/registration', (req, res) => {
     res.render('patientRegistration');
 });

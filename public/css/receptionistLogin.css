@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #e4ccff, #ffe7e6);
+  /* Lavender to light purple */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #4b0082;
+  /* Indigo text */
+}
+
+header {
+  background: linear-gradient(to right, #e4ccff, #ffe7e6);
+  color: #4b0082;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-box {
+  background: #ffffffee;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+  color: #4b0082;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  color: #6a0dad;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #4b0082;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #4b0082;
+}
+
+button {
+  background: #a970ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #8b4dff;
+}
+
+.link-group {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-group a {
+  color: #6a0dad;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.link-group a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #d8b4f8;
+  color: #4b0082;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 25px 20px;
+  }
+  h1,
+  h2 {
+    font-size: 1.4rem;
+  }
+  .link-group {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+}

@@ -1,0 +1,55 @@
+<% if (!patientName) { %>
+    <script>
+        window.location.href = "/patient/login";
+    </script>
+    <% } %>
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <title>Patient Dashboard</title>
+            <link rel="stylesheet" href="/css/patientDashboard.css">
+        </head>
+
+        <body>
+            <header>
+                <h2>
+                    Welcome,
+                    <%= patientName %> 🧑‍⚕️
+                </h2>
+                <form action="/logout" method="post">
+                    <button class="logout-btn">Logout ⏏</button>
+                </form>
+            </header>
+
+            <div class="dashboard">
+                <div class="card">
+                    <h3>📋 View Profile</h3>
+                    <p>Check your registered details</p>
+                </div>
+                <div class="card">
+                    <h3>📅 Book Appointment</h3>
+                    <p>Schedule a visit with a doctor</p>
+                </div>
+                <div class="card">
+                    <h3>📖 Appointment History</h3>
+                    <p>View your past visits and doctors</p>
+                </div>
+                <div class="card">
+                    <h3>💊 Medical Records</h3>
+                    <p>Access your test results & prescriptions</p>
+                </div>
+                <div class="card">
+                    <h3>📞 Contact Support</h3>
+                    <p>Get help from our team</p>
+                </div>
+            </div>
+
+            <footer>
+                &copy; 2025 HealthCare Portal | Patient Dashboard
+            </footer>
+        </body>
+
+        </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Receptionist Login - Health Axis</title>
+    <link rel="stylesheet" href="/css/receptionistLogin.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header> Welcome Receptionist, Login to Health Axis </header>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1>👩‍⚕️ Health Axis</h1>
+            <h2>Receptionist Login</h2>
+
+            <!-- Error Message Display -->
+            <% if (typeof error !=="undefined" && error) { %>
+                <div style="color: red; margin-bottom: 10px;">
+                    <%= error %>
+                </div>
+                <% } %>
+
+                    <form action="/receptionist/login" method="post">
+                        <label for="username">Email:</label>
+                        <input type="text" name="email" id="username" required>
+
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required>
+
+                        <button type="submit">Login</button>
+
+                        <div class="link-group">
+                            <a href="/receptionist/registration">Sign Up</a>
+                            <a href="forgotPassword.html">Forgot Password?</a>
+                        </div>
+                    </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer> &copy; 2025 Health Axis | Receptionist Portal </footer>
+</body>
+
+</html>

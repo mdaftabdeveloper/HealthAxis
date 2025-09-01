@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 const rootRoute = require('./routes/rootRoute');
 const doctorRoute = require('./routes/doctor');
 const patientRoute = require('./routes/patient');
-
+const receptionistRoute = require('./routes/receptionist');
 dbConnection();
 
 app.use(session({
@@ -36,7 +36,7 @@ app.use(session({
 app.use(rootRoute);
 app.use(doctorRoute);
 app.use(patientRoute);
-
+app.use(receptionistRoute);
 app.listen(PORT, (err) => {
     if (err)
         console.log(err);
