@@ -5,7 +5,6 @@ require("dotenv").config();
 const dbConnection = require('./utils/dbConnection');
 const app = express();
 
-// Use JSON and URL-encoded with higher limits if you still need them
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
