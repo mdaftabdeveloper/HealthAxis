@@ -44,36 +44,65 @@ async function verifyPatientOtp(req, res) {
     }
 }
 
+// async function patientLogin(req, res) {
+//     try {
+
+//         const { email, password } = req.body;
+
+//         patientEmail = email;
+//         console.log(patientEmail)
+//         const patient = await Patient.findOne({ email });
+//         console.log("Patient", patient);
+//         patientName = patient.fullName;
+
+//         if (!patient) {
+//             return res.status(400).send("Patient not found");
+//         }
+//         if (!patient.isVerified) {
+//             await createAndSendOtp(patientEmail, patientName);
+
+//             return res.redirect('/verify/patient');
+//         }
+
+//         const isMatch = await comparePassword(password, patient.password);
+
+//         if (!isMatch) {
+//             return res.status(400).send("Invalid password");
+//         }
+
+//         res.render('patientDashboard', { patientName });
+
+//     } catch (error) {
+//         res.status(500).send("Server error");
+//     }
+
+// }
 async function patientLogin(req, res) {
     try {
-
         const { email, password } = req.body;
-        patientEmail = email;
         const patient = await Patient.findOne({ email });
-        patientName = patient.fullName;
 
         if (!patient) {
-            return res.status(400).send("Patient not found");
+            return res.render("patientLogin", { error: "Invalid email or password" });
         }
 
         if (!patient.isVerified) {
-            await createAndSendOtp(patientEmail, patientName);
-
+            await createAndSendOtp(patient.email, patient.fullName);
             return res.redirect('/verify/patient');
         }
 
         const isMatch = await comparePassword(password, patient.password);
 
         if (!isMatch) {
-            return res.status(400).send("Invalid password");
+            return res.render("patientLogin", { error: "Invalid email or password" });
         }
 
-        res.render('patientDashboard', { patientName });
+        res.render("patientDashboard", { patientName: patient.fullName });
 
     } catch (error) {
         res.status(500).send("Server error");
     }
-
 }
+
 
 module.exports = { registerPatient, verifyPatientOtp, patientLogin };

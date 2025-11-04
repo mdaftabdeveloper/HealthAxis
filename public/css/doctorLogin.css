@@ -15,12 +15,13 @@ body {
 
 /* Header */
 header {
-  background-color: #00796b;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+  background: linear-gradient(135deg, #a8edea, #d7fdec);
+	color: #00796b;
+	text-align: center;
+	padding: 20px 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Container */
@@ -51,7 +52,7 @@ header {
 
 .login-box h2 {
   margin-bottom: 20px;
-  color: #333;
+  color: #00796b;
   font-weight: 500;
 }
 
@@ -72,7 +73,7 @@ label {
   margin: 10px 0 5px;
   text-align: left;
   font-weight: bold;
-  color: #444;
+  color: #00796b;
 }
 
 input {

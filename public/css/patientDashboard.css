@@ -45,7 +45,10 @@ header h2 {
   text-align: center;
   transition: transform 0.3s ease;
 }
-
+.card a {
+	text-decoration: none;
+	color: #033d1e;
+}
 .card:hover {
   transform: translateY(-5px);
 }

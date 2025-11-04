@@ -48,12 +48,10 @@ async function verifyDoctorOtp(req, res) {
 async function doctorLogin(req, res) {
     try {
         const { email, password } = req.body;
-        req.session.doctorEmail = email;
         const doctor = await Doctor.findOne({ email });
-        req.session.doctorName = doctor.name;
 
         if (!doctor) {
-            return res.status(400).send("Doctor not found");
+            return res.render("doctorLogin", { error: "Invalid email or password" });
         }
 
         if (!doctor.isVerified) {
@@ -64,10 +62,10 @@ async function doctorLogin(req, res) {
 
         const isMatch = await comparePassword(password, doctor.password);
         if (!isMatch) {
-            return res.status(400).send("Invalid password");
+            return res.render("doctorLogin", { error: "Invalid email or password" });
         }
 
-        res.render('doctorDashboard', { doctorName: req.session.doctorName });
+        res.render('doctorDashboard', { doctorName: doctor.name });
 
     } catch (error) {
         console.error(error);

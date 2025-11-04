@@ -3,19 +3,203 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/css/homePage.css">
-    <title>Welcome to Health Axis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to HealthAxis</title>
+    <link rel="stylesheet" href="/css/homePage.css" />
+    <script defer src="/js/homePage.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Welcome to Health Axis</h1>
-        <button onclick="location.href='/doctor/login'">Doctors</button>
-        <button onclick="location.href='/receptionist/login'">Receptionists</button>
-        <button onclick="location.href='html/adminLogin.html'">Admin</button>
-        <button onclick="location.href='/patient/login'">Patients</button>
-    </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">Welcome to Health<span>Axis</span></div>
+        <nav class="navbar">
+            <a href="#about">About</a>
+            <a href="#specialities">Specialities</a>
+            <a href="#tech">Technology</a>
+            <a href="#doctors">Doctors</a>
+            <a href="#appointment">Appointment</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-text">
+            <h1 class="glow-text">Your Health, Our Priority</h1>
+            <p>Cutting-edge technology meets compassionate care — the future of healing is here.</p>
+            <button class="btn">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Us</h2>
+        <p>
+            Founded in 2016 in the historic city of Dumraon, Bihar, HealthAxis Hospital has been a trusted name in
+            advanced healthcare, compassion, and medical innovation. Built with a vision to provide world-class
+            treatment close to home, HealthAxis brings together cutting-edge technology, skilled doctors, and a
+            patient-first approach that truly makes a difference in people’s lives.
+
+            Our hospital offers specialized care across multiple departments including Cardiology, Dermatology,
+            Oncology, Gynecology, and Pediatrics, Orthopedics, each equipped with state-of-the-art facilities and led by
+            experienced medical professionals dedicated to excellence. We take pride in offering not just treatment, but
+            personalized care that focuses on healing the body, mind, and spirit.
+
+            Over the years, HealthAxis has grown into a symbol of trust and quality healthcare in Bihar. From preventive
+            check-ups to complex surgeries, we combine expertise with empathy to ensure every patient receives the best
+            possible outcome. Our mission is simple — to make advanced, affordable, and accessible healthcare a reality
+            for every individual.
+
+            At HealthAxis, your health is our priority, your comfort is our promise, and your trust is our strength.
+        </p>
+    </section>
+
+    <!-- SPECIALITIES -->
+    <section id="specialities" class="specialities">
+        <h2 class="section-title">Specialities & Procedures</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1290220631/photo/human-heart-with-ecg-graph.jpg?s=612x612&w=0&k=20&c=9zjykrI4sBRluNkHkaFFs-Vg9JkjtMWJxqsfzl2Hgo4="
+                    alt="Cardiology">
+                <h3>Cardiology</h3>
+                <p>Heart care with precision diagnostics, advanced procedures, and compassionate post-care.</p>
+            </div>
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/neurology-science-hd-8k-wallpaper-stock-photographic-image_915071-53601.jpg"
+                    alt="Neurology">
+                <h3>Neurology</h3>
+                <p>Expert care for brain and nervous system conditions using cutting-edge neuro-imaging tools.</p>
+            </div>
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.axxUOxmUo1dPMO-8Q3-PvQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Orthopedics">
+                <h3>Orthopedics</h3>
+                <p>Comprehensive bone and joint treatments, from arthroscopy to advanced physiotherapy.</p>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.cep2NwQSyFzG5rjGf1JLlwHaEJ?w=326&h=183&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Pediatrics">
+                <h3>Pediatrics</h3>
+                <p>Gentle and specialized care for infants, children, and adolescents in a safe environment.</p>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.tWt6r_f5izw3IQvOl0ZqYgHaE8?w=245&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Oncology">
+                <h3>Oncology</h3>
+                <p>Integrated cancer care with personalized treatment plans and emotional support.</p>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.LYZp9cySZrB9bvYR1VWf6gHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="ENT">
+                <h3>ENT</h3>
+                <p>Advanced treatments for ear, nose, and throat disorders using minimally invasive methods.</p>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.H2wayNQIpBSZnOVYcan7vAHaEK?w=260&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Gynecology">
+                <h3>Gynecology</h3>
+                <p>Advanced treatments for ear, nose, and throat disorders using minimally invasive methods.</p>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.m_TDdkXHMbJ1Qzl3oJdPjwHaCo?w=276&h=124&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="ENT">
+                <h3>Dermatology</h3>
+                <p>Advanced treatments for ear, nose, and throat disorders using minimally invasive methods.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="tech" class="tech">
+        <h2 class="section-title">Our Technological Advancements</h2>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <img src="https://th.bing.com/th/id/OIP.-frXaeWYiEyItmMSCbWsZwHaEK?w=331&h=186&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="AI Diagnostics">
+                <h3>AI Diagnostics</h3>
+                <p>Machine learning algorithms detect patterns in scans faster and more accurately than ever before.</p>
+            </div>
+            <div class="tech-card">
+                <img src="https://th.bing.com/th/id/OIP.YJwyQLaVpRmXFAl2OG4Y7wHaFF?w=256&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Robotic Surgery">
+                <h3>Robotic Surgery</h3>
+                <p>Our robotic systems ensure precision and faster recovery with reduced pain and scarring.</p>
+            </div>
+            <div class="tech-card">
+                <img src="https://th.bing.com/th/id/OIP.h6jRafQTRJIto-NtcYjBXAHaEK?w=291&h=181&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="3D Imaging">
+                <h3>3D Imaging</h3>
+                <p>Advanced 3D scans provide crystal-clear insights for precise diagnosis and surgery planning.</p>
+            </div>
+            <div class="tech-card">
+                <img src="https://th.bing.com/th/id/OIP.T6U7q1VtCmvfMs6-hTM15QHaE8?w=256&h=182&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Telemedicine">
+                <h3>Telemedicine</h3>
+                <p>Virtual consultations connect patients with experts anytime, anywhere — securely and seamlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS -->
+    <section id="doctors" class="doctors">
+        <h2 class="section-title">Meet Our Expert Doctors</h2>
+        <div class="doctor-cards">
+            <div class="doctor">
+                <img src="https://th.bing.com/th/id/OIP.3GO8CJYQbs_JPaY6jr2t1wHaHp?w=182&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Dr. Hoda">
+                <h3>Dr. J. Hoda</h3>
+                <p>Chief Cardiologist</p>
+            </div>
+            <div class="doctor">
+                <img src="https://th.bing.com/th/id/OIP.0Ttue7YQAsl2DKGwh4POzgHaHa?w=174&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                    alt="Dr. Hussain">
+                <h3>Dr. Anwar Hussain</h3>
+                <p>Senior Neurologist</p>
+            </div>
+            <div class="doctor">
+                <img src="https://th.bing.com/th?q=Dr+Profile&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&dpr=1.5&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
+                    alt="Dr. Kumar">
+                <h3>Dr. Virendra Kumar</h3>
+                <p>Orthopedic Surgeon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT -->
+    <section id="appointment" class="appointment">
+        <h2 class="section-title">Book an Appointment</h2>
+        <form action="/book-appointment" method="POST" class="form">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <select name="department" required>
+                <option value="" disabled selected>Select Department</option>
+                <option>Cardiology</option>
+                <option>Neurology</option>
+                <option>Orthopedics</option>
+                <option>Oncology</option>
+            </select>
+            <input type="date" name="date" required />
+            <button type="submit" class="btn">Book Now</button>
+        </form>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="login">
+        <h2 class="section-title">Login Portal</h2>
+        <div class="login-boxes">
+            <a href="/patient/login" class="login-btn">Patient</a>
+            <a href="/receptionist/login" class="login-btn">Receptionist</a>
+            <a href="/doctor/login" class="login-btn">Doctor</a>
+            <a href="/login/admin" class="login-btn">Admin</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 HealthAxis | All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

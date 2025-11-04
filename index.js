@@ -37,7 +37,7 @@ app.use(rootRoute);
 app.use(doctorRoute);
 app.use(patientRoute);
 app.use(receptionistRoute);
-app.listen(PORT, (err) => {
+app.listen(PORT, '0.0.0.0', (err) => {
     if (err)
         console.log(err);
     else

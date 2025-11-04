@@ -1,84 +1,306 @@
-@charset "UTF-8";
-
-/* Reset and base */
+/* ======== GLOBAL STYLES ======== */
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-	/* Orange to yellow gradient background */
-	background: linear-gradient(135deg, #FFD194, #FFE29F, #FFF7D6);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	padding: 20px;
+  background: linear-gradient(135deg, #fffef7, #fffde7, #f9fbe7);
+  color: #333;
+  overflow-x: hidden;
 }
 
-.container {
-	background: rgba(255, 255, 255, 0.85);
-	border-radius: 14px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-	padding: 45px 35px;
-	max-width: 380px;
-	width: 100%;
-	text-align: center;
-	animation: fadeIn 1s ease forwards;
+h1, h2, h3 {
+  letter-spacing: 0.5px;
 }
 
-h1 {
-	color: #D35400;
-	/* rich orange */
-	margin-bottom: 30px;
-	font-weight: 700;
-	font-size: 1.8rem;
+/* ======== HEADER ======== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 70px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  z-index: 100;
 }
 
-button {
-	background: #E67E22;
-	/* vibrant orange */
-	color: white;
-	border: none;
-	padding: 14px 0;
-	margin: 12px 0;
-	width: 100%;
-	border-radius: 8px;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: background 0.3s ease, transform 0.3s ease;
-	box-shadow: 0 4px 8px rgba(230, 126, 34, 0.3);
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #009688;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: #ffc107;
 }
 
-button:hover {
-	background: #D35400;
-	transform: translateY(-3px);
-	box-shadow: 0 8px 15px rgba(211, 84, 0, 0.4);
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.navbar a:hover {
+  color: #009688;
 }
 
-@media (min-width: 600px) {
-            .container {
-                max-width: 420px;
-                padding: 55px 45px;
-            }
+/* ======== HERO SECTION ======== */
+.hero {
+  /* background: url("https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover; */
+  background: url("https://img.freepik.com/premium-photo/indian-doctors-group-indian-medical-doctors-male-female-standing-isolated-white-backgrou_987366-25118.jpg?w=2000") no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  align-items:end;
+  justify-content: center;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 150, 136, 0.45); */
+}
+.hero-text {
+  position: relative;
+  text-align: center;
+  color: teal;
+  z-index: 1;
+  animation: fadeInUp 2s ease-out;
+}
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  animation: glowText 3s infinite alternate;
+}
+.hero-text p {
+  font-size: 2rem;
+  margin-top: 15px;
+  color: #000000;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.6);
+	animation: glowText 3s infinite alternate;
+}
+.btn {
+  background: linear-gradient(90deg, #009688, #26a69a);
+  color: white;
+  border: none;
+  margin-top: 20px;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #00bfa5, #4db6ac);
+  transform: translateY(-3px);
+}
 
-            button {
-                font-size: 1.1rem;
-                padding: 16px 0;
-            }
-        }
+/* ======== SECTION STYLES ======== */
+section {
+  padding: 100px 70px;
+  text-align: center;
+}
+.section-title {
+  font-size: 2.8rem;
+  color: #00796b;
+  margin-bottom: 30px;
+  font-weight: 600;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 5px;
+  background: #ffc107;
+  margin: 12px auto;
+  border-radius: 4px;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+/* ======== ABOUT ======== */
+.about p {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.7;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-   
+/* ======== CARDS (Specialities) ======== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  animation: fadeInUp 1.2s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card h3 {
+  color: #00796b;
+  font-size: 1.4rem;
+  margin: 15px 0 8px;
+}
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  padding: 0 15px 20px;
+}
+
+/* ======== TECHNOLOGY ======== */
+.tech-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.tech-card {
+  background: #fffef7;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.4s;
+}
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 20px rgba(0, 150, 136, 0.2);
+}
+.tech-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.tech-card h3 {
+  color: #009688;
+  margin: 12px 0 8px;
+}
+.tech-card p {
+  padding: 0 15px 20px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ======== DOCTORS ======== */
+.doctor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.doctor {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  width: 260px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+.doctor:hover {
+  transform: translateY(-8px);
+}
+.doctor img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #ffc107;
+  margin-bottom: 10px;
+}
+.doctor h3 {
+  color: #00796b;
+  font-weight: 600;
+}
+
+/* ======== APPOINTMENT ======== */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+  background: #ffffffb8;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 150, 136, 0.1);
+}
+.form input, .form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+}
+.form button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ======== LOGIN ======== */
+.login-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.login-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #009688, #4db6ac);
+  color: white;
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #26a69a, #00bfa5);
+  transform: scale(1.05);
+}
+
+/* ======== FOOTER ======== */
+.footer {
+  background: #00796b;
+  color: #fffde7;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.95rem;
+}
+
+/* ======== ANIMATIONS ======== */
+@keyframes glowText {
+  0% { text-shadow: 0 0 10px #fff, 0 0 20px #ffc107, 0 0 30px #ffc107; }
+  100% { text-shadow: 0 0 15px #fff, 0 0 35px #ffeb3b, 0 0 50px #ffeb3b; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
