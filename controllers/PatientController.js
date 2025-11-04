@@ -97,12 +97,20 @@ async function patientLogin(req, res) {
             return res.render("patientLogin", { error: "Invalid email or password" });
         }
 
-        res.render("patientDashboard", { patientName: patient.fullName });
+        res.render("patientDashboard", { patient: patient });
 
     } catch (error) {
         res.status(500).send("Server error");
     }
 }
 
-
-module.exports = { registerPatient, verifyPatientOtp, patientLogin };
+async function patientDetails(req, res) {
+    try {
+        const patientId = req.params._id;
+        const patient = await Patient.findOne({ _id: patientId });
+        return res.render("patientDetails", { patient });
+    } catch (error) {
+        res.send("Error in loading patient details");
+    }
+}
+module.exports = { registerPatient, verifyPatientOtp, patientLogin, patientDetails };

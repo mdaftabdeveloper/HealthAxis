@@ -105,11 +105,14 @@ button:hover {
 }
 
 footer {
-	background-color: #f8bbd0;
-	color: #ad1457;
 	text-align: center;
-	padding: 12px 0;
-	font-weight: 600;
+  padding: 15px;
+  background: #f8bbd0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
 }
 
 @media ( max-width : 480px) {

@@ -27,4 +27,8 @@ router.get("/verify/patient", (req, res) => {
 });
 
 router.post("/verify/patient", PatientController.verifyPatientOtp);
+
+router.get("/patient/details/:_id", (req, res) => {
+    PatientController.patientDetails(req, res);
+})
 module.exports = router;

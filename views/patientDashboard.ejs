@@ -1,4 +1,4 @@
-<% if (!patientName) { %>
+<% if (!patient.fullName) { %>
     <script>
         window.location.href = "/patient/login";
     </script>
@@ -17,7 +17,7 @@
             <header>
                 <h2>
                     Welcome,
-                    <%= patientName %> 🧑‍⚕️
+                    <%= patient.fullName %> 🧑‍⚕️
                 </h2>
                 <form action="/logout" method="post">
                     <button class="logout-btn">Logout ⏏</button>
@@ -26,7 +26,7 @@
 
             <div class="dashboard">
                 <div class="card">
-                    <a href="">
+                    <a href="/patient/details/<%= patient._id %>">
                         <h3>📋 View Profile</h3>
                     </a>
                     <p>Check your registered details</p>
@@ -58,7 +58,7 @@
             </div>
 
             <footer>
-                &copy; 2025 HealthCare Portal | Patient Dashboard
+                &copy; 2025 HealthAxis Patient Portal | All rights reserved
             </footer>
         </body>
 

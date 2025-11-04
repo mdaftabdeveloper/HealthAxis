@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="/css/patientDetails.css">
+</head>
+
+<body>
+    <header>
+        <h2>HealthAxis</h2>
+    </header>
+
+    <div class="container">
+        <h1>Patient Details</h1>
+        <div class="card">
+            <div class="profile-photo">
+                <img src="<%= patient.capturedPhoto %>" alt="Patient Photo">
+            </div>
+
+            <div class="info">
+                <p><strong>Patient ID:</strong>
+                    <%= patient.patientId %>
+                </p>
+                <p><strong>Full Name:</strong> <span id="fullName">
+                        <%= patient.fullName %>
+                    </span></p>
+                <p><strong>Email:</strong> <span id="email">
+                        <%= patient.email %>
+                    </span></p>
+                <p><strong>DOB:</strong> <span id="dob">
+                        <%= new Date(patient.dob).toISOString().split('T')[0] %>
+                    </span></p>
+                <p><strong>Age:</strong> <span id="age">
+                        <%= patient.age %>
+                    </span></p>
+                <p><strong>Gender:</strong> <span id="gender">
+                        <%= patient.gender %>
+                    </span></p>
+                <p><strong>Mobile:</strong> <span id="mobile">
+                        <%= patient.mobile %>
+                    </span></p>
+                <p><strong>Aadhar:</strong> <span id="aadhar">
+                        <%= patient.aadhar %>
+                    </span></p>
+                <p><strong>Referred By:</strong> <span id="referredBy">
+                        <%= patient.referredBy %>
+                    </span></p>
+                <p><strong>Verified:</strong>
+                    <%= patient.isVerified ? "Yes ✅" : "No ❌" %>
+                </p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="editBtn">Edit Details</button>
+            <button id="saveBtn" class="hidden">Save</button>
+            <button id="cancelBtn" class="hidden">Cancel</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 HealthAxis Patient Portal | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // const patientData = <% - JSON.stringify(patient) %>;
+    </script>
+    <script src="/js/patientDetails.js"></script>
+</body>
+
+</html>
