@@ -30,5 +30,14 @@ router.post("/verify/patient", PatientController.verifyPatientOtp);
 
 router.get("/patient/details/:_id", (req, res) => {
     PatientController.patientDetails(req, res);
-})
+});
+
+router.get("/update/patient/:_id", (req, res) => {
+    PatientController.updatePatient(req, res);
+});
+
+router.post("/update/patient/:_id", (req, res) => {
+    console.log("Route hitted");
+    PatientController.savePatient(req, res);
+});
 module.exports = router;

@@ -55,7 +55,9 @@
         </div>
 
         <div class="buttons">
-            <button id="editBtn">Edit Details</button>
+            <a href="/update/patient/<%= patient._id %>">
+                <button id="editBtn" editPatient>Edit Details</button>
+            </a>
             <button id="saveBtn" class="hidden">Save</button>
             <button id="cancelBtn" class="hidden">Cancel</button>
         </div>
@@ -68,7 +70,7 @@
     <script>
         // const patientData = <% - JSON.stringify(patient) %>;
     </script>
-    <script src="/js/patientDetails.js"></script>
+    <!-- <script src="/js/patientDetails.js"></script> -->
 </body>
 
 </html>

@@ -113,4 +113,39 @@ async function patientDetails(req, res) {
         res.send("Error in loading patient details");
     }
 }
-module.exports = { registerPatient, verifyPatientOtp, patientLogin, patientDetails };
+
+async function updatePatient(req, res) {
+    try {
+        const patientId = req.params._id;
+        const patient = await Patient.findOne({ _id: patientId });
+
+        return res.render("updatePatient", { patient });
+    } catch (error) {
+        res.send("Error in updating patient..");
+    }
+}
+
+async function savePatient(req, res) {
+    try {
+        const patientId = req.params._id;
+        console.log(req.body);
+        const patient = await Patient.findOne({ _id: patientId });
+        if (patient) {
+            patient.fullName = req.body.fullName;
+            patient.email = req.body.email;
+            patient.dob = req.body.dob;
+            patient.age = req.body.age;
+            patient.gender = req.body.gender;
+            patient.mobile = req.body.mobile;
+            patient.aadhar = req.body.aadhar;
+            patient.referredBy = req.body.referredBy;
+            patient.password = req.body.password;
+
+            await patient.save();
+            res.render("patientDashboard", { "patient": patient });
+        }
+    } catch (error) {
+        res.send("Error in saving updated patient..");
+    }
+}
+module.exports = { registerPatient, verifyPatientOtp, patientLogin, patientDetails, updatePatient, savePatient };
